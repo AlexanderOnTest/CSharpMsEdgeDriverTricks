@@ -108,6 +108,7 @@ namespace AoT.EdgeDriver.Tests
         public void RequestingRemoteChromiumEdgeDriverThrowsWebDriverException()
         {
             edgeOptions.PlatformName = PlatformType.Windows.ToString();
+            // This does not work on either Selenium 3 or Selenium 4 grids in my testing
             Uri gridUri = new Uri("http://192.168.0.200:4444/wd/hub");
             
             Action action = () => driver1 = new RemoteWebDriver(gridUri, edgeOptions);
